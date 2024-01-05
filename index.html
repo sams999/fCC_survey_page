@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1 id="title">User Survey Form</h1>
+      <p id="description">Thank you for taking the time to help us improve!</p>
+    </header>
+    <form id="survey-form" onsubmit="sent()">
+      <div class="form-group">
+        <label id="name-label" for="name">Name</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder=" Enter your name"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label id="email-label" for="email">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder=" Email address"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label id="number-label" for="number">
+          Age <span class="clue">(optional)</span>
+        </label>
+        <input
+          type="number"
+          name="age"
+          id="number"
+          min="13"
+          max="120"
+          class="number-age"
+          placeholder=" Age"
+        />
+      <hr>
+      </div>
+      <div class="form-group">
+        <p>Which option best describes your current role?</p>
+        <select id="dropdown" name="role" required>
+          <option disabled selected value>Select current role</option>
+          <option value="student">Student</option>
+          <option value="job">Instructor</option>
+          <option value="professional">Professional</option>
+          <option value="other">Other</option>
+          <option value="preferNo">Prefer not to say</option>
+        </select>
+      </div>
+      <hr>
+      <div class="form-group">
+        <p>Would you recommend our website to a friend?</p>
+        <label for="radio-yes" class="radio-label"><input type="radio" class="input-radio inline" name="input-radio" value="yes" checked id="radio-yes" /> Yes</label>
+        <label for="radio-no" class="radio-label"><input type="radio" class="input-radio inline" name="input-radio" value="no" id="radio-no" /> No</label>
+      </div>
+      <div>
+        <hr>
+        <p>Which areas are you interested in learning more about? (check all that apply)</p>
+        <label for="software" class="checkbox-align"><input type="checkbox" name="software-dev" value="a" class="input-checkbox inline" id="software" /> Software Development</label>
+        <label for="app-dev" class="checkbox-align"><input type="checkbox" name="app-dev" value="app-dev" class="input-checkbox inline" id="app-dev" /> Mobile App Development</label>
+        <label for="game-dev" class="checkbox-align"><input type="checkbox" name="game-dev" value="game-dev" class="input-checkbox inline" id="game-dev" /> Game Development</label>
+        <label for="security" class="checkbox-align"><input type="checkbox" name="security" value="security" class="input-checkbox inline" id="security" /> Cyber Security</label>
+        <label for="data-science" class="checkbox-align"><input type="checkbox" name="data-science" value="b" class="input-checkbox inline" id="data-science" /> Data Science</label>
+        <label for="cloud" class="checkbox-align"><input type="checkbox" name="cloud" value="cloud" class="input-checkbox inline" id="cloud" /> Cloud Computing</label>
+        <label for="machine-learning" class="checkbox-align"><input type="checkbox" name="machine-learning" value="machine-learning" class="input-checkbox inline" id="machine-learning" /> Machine Learning & AI</label>
+      </div>
+      <hr>
+      <div class="text">
+        <p>Do you have any additional comments? (optional)</p>
+        <textarea class="input-textarea" name="comments" id="comments" placeholder="Leave comments here..."></textarea>
+      </div> 
+      <button type="submit" id="submit" class="submit-button">
+        Submit
+      </button>
+      <script>function sent() {
+        console.log("sent function called");
+        window.alert("Thank you for participating in our survey. Your responses have been submitted.");
+        return true; 
+        };
+      </script>
+    </form>
+  </div>
+</body>
+</html>
